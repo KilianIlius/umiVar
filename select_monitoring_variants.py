@@ -124,9 +124,8 @@ class MonitoringVariant:
                     fh_vcf.write(vcf_line + '\n')
                     
                     #check for caller:
-                    
                     if vcf_line.startswith("##source="):
-                        if "strelka" in vcf_line: 
+                        if "strelka" in vcf_line.lower(): 
                             caller = "strelka"
                         if "dragen" in vcf_line.lower(): 
                             caller = "dragen"

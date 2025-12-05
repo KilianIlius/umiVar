@@ -145,8 +145,11 @@ class MonitoringVariant:
                 format_column = vcf_column[8].split(":")
 
                 # Get fields of the sample columns
-                normal_sample = vcf_column[9].split(":")
-                tumor_sample = vcf_column[10].split(":")
+                if caller != "deepsomatic":
+                    normal_sample = vcf_column[9].split(":")
+                    tumor_sample = vcf_column[10].split(":")
+                else:
+                    tumor_sample = vcf_column[9].split(":")
 
                 # Store Info Abbreviations and content in dictionary
                 info_pairs = dict()

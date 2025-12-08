@@ -183,7 +183,7 @@ class MonitoringVariant:
                 if caller != "deepsomatic":
                     normal_dp = int(normal_table['DP'])
                 else:
-                    normal_dp = int(info_pairs[n_id + "_DP"])                
+                    normal_dp = int(info_pairs[self.n_id + "_DP"])                
                 tumor_dp = int(tumor_table['DP'])
                 
                 if caller == "strelka":
